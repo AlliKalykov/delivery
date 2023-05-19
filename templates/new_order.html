@@ -1,0 +1,15 @@
+<!DOCTYPE "html">
+<html>
+<head>
+<title>My first DJANGO Website</title>
+
+</head>
+<body>
+<h1>My first DJANGO FORM</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
