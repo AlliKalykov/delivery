@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title%} {{ title }} {% endblock %}
+{% block content %}
+    <p>Name: {{ order.name }}</p>
+    <p>Email: {{ order.email }}</p>
+    <p>Message: {{ order.message }}</p>
+{% endblock%}

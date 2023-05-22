@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title%} {{ title }} {% endblock %}
+{% block content %}
+    {% if orders %}
+        {% for order in orders %}
+        <p> Name: {{ order.name }}     email: {{ order.email }}      <a href="{% url 'order_detail' id=order.id %}" style="font-size: 8px;">Подробнее</a></p>
+        {% endfor %}
+    {% else %}
+        <h1> No orders </h1>
+    {% endif %}
+{% endblock%}

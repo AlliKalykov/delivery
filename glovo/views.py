@@ -18,3 +18,18 @@ def new_order(request):
     else:
         form = ContactForm()
         return render(request, 'new_order.html', {'form': form})
+
+
+def order_detail(request, id):
+    # .get() возвращает один объект,
+    # но если объект не найден, то возбуждает исключение (ошибку)
+    try:
+        yuitgbd = Order.objects.get(id=id)
+        return render(request, 'order_detail.html', {'order': yuitgbd})
+    except Order.DoesNotExist:
+        return HttpResponse('Заказ не найден')
+    
+
+def list_order(request):
+    orders = Order.objects.all()
+    return render(request, 'order_list.html', {'orders': orders})
